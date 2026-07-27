@@ -1,0 +1,6 @@
+{
+  "name": "FINABIT — Luxury Real Estate",
+  "description": "Exclusive hero landing page for FINABIT luxury real estate with high-end photography and concierge services.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
