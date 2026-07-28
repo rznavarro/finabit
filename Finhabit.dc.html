@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Finhabit Propiedades | 30 años en el mercado inmobiliario chileno</title>
+<meta name="description" content="Finhabit Propiedades: más de 30 años en venta, arriendo y administración de propiedades en 6 regiones de Chile. Vitacura, Santiago.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Inter,system-ui,sans-serif;color:#1C3D5A;background:#F8F7F4;-webkit-font-smoothing:antialiased}
+a{color:#1C3D5A;text-decoration:none}
+a:hover{color:#B08D57}
+@media (max-width:760px){.fh-navlinks{display:none!important}.fh-2col{grid-template-columns:1fr!important}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</helmet>
+
+<nav style="position:fixed;top:0;left:0;right:0;z-index:50;display:flex;justify-content:center;padding:18px 16px 0;pointer-events:none">
+  <div style="pointer-events:auto;display:flex;align-items:center;gap:28px;background:rgba(255,255,255,.7);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-radius:12px;padding:12px 22px;box-shadow:0 1px 4px rgba(28,61,90,.08);border:1px solid rgba(28,61,90,.06)">
+    <a href="#inicio" style="display:flex;align-items:center;gap:9px">
+      <span style="width:22px;height:22px;border-radius:5px;background:#B08D57;display:inline-block"></span>
+      <span style="font-family:'Instrument Serif',serif;font-size:21px;letter-spacing:.01em;color:#1C3D5A">Finhabit</span>
+    </a>
+    <div class="fh-navlinks" style="display:flex;gap:22px;align-items:center">
+      <a href="#propiedades" style="font-size:13.5px;font-weight:500;color:rgba(28,61,90,.8)" style-hover="color:#1C3D5A">Propiedades</a>
+      <a href="#confienos" style="font-size:13.5px;font-weight:500;color:rgba(28,61,90,.8)" style-hover="color:#1C3D5A">Confíenos su Propiedad</a>
+      <a href="#encargo" style="font-size:13.5px;font-weight:500;color:rgba(28,61,90,.8)" style-hover="color:#1C3D5A">Encargo de Propiedad</a>
+      <a href="#contacto" style="font-size:13.5px;font-weight:500;color:rgba(28,61,90,.8)" style-hover="color:#1C3D5A">Contacto</a>
+    </div>
+    <a href="https://wa.me/56995377271" target="_blank" rel="noopener" style="font-size:13px;font-weight:600;background:#1C3D5A;color:#FEFEFE;padding:8px 16px;border-radius:9px" style-hover="background:#B08D57;color:#FEFEFE">WhatsApp</a>
+  </div>
+</nav>
+
+<header id="inicio" style="position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;overflow:hidden">
+  <sc-if value="{{ mostrarVideo }}" hint-placeholder-val="{{ true }}">
+    <video data-hero-video autoPlay muted loop playsInline preload="auto" poster="uploads/a.jfif" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top;z-index:0" src="uploads/Wan_Video_Generate_Create a seamless cinematic one-shot transition between the p (1).mp4"></video>
+  </sc-if>
+  <sc-if value="{{ sinVideo }}" hint-placeholder-val="{{ false }}">
+    <img src="uploads/a.jfif" alt="Departamento de lujo con vista panorámica" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top;z-index:0">
+  </sc-if>
+  <div style="position:relative;z-index:10;width:100%;max-width:1100px;margin:0 auto;padding:120px 20px 60px;display:flex;flex-direction:column;align-items:center;text-align:center">
+    <div style="margin-bottom:24px;display:inline-flex;align-items:center;gap:9px;border:1px solid rgba(28,61,90,.1);background:rgba(255,255,255,.7);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);border-radius:12px;padding:8px 16px;font-size:13.5px;font-weight:500">
+      <span style="width:18px;height:18px;border-radius:4px;background:#B08D57;display:inline-block"></span>
+      30 años de trayectoria inmobiliaria
+    </div>
+    <h1 style="margin:0;font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(2.6rem,7.5vw,6.2rem);line-height:.95;letter-spacing:-.02em;color:#FEFEFE;text-shadow:0 2px 18px rgba(28,61,90,.35);text-wrap:balance">Encuentra la propiedad<br><em>que realmente buscas</em></h1>
+    <p style="margin:22px auto 0;max-width:640px;font-size:clamp(.8rem,1.4vw,1rem);line-height:1.65;color:rgba(254,254,254,.92);text-shadow:0 1px 12px rgba(28,61,90,.35)">Más de 30 años conectando personas con la propiedad correcta, en venta, arriendo y administración, en 6 regiones de Chile.</p>
+    <a href="https://wa.me/56995377271?text=Hola,%20quiero%20información%20sobre%20propiedades" target="_blank" rel="noopener" style="margin-top:34px;display:inline-block;border-radius:12px;background:#FEFEFE;color:#1C3D5A;padding:14px 32px;font-size:14px;font-weight:600;box-shadow:0 4px 12px rgba(0,0,0,.15)" style-hover="box-shadow:0 6px 20px rgba(0,0,0,.25)">Hablar por WhatsApp</a>
+  </div>
+</header>
+
+<section data-reveal data-stats style="background:#F8F7F4;padding:76px 20px">
+  <div style="max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:34px;text-align:center">
+    <sc-for list="{{ stats }}" as="s" hint-placeholder-count="4">
+      <div style="display:flex;flex-direction:column;gap:6px">
+        <span style="font-family:'Instrument Serif',serif;font-size:clamp(2.6rem,4.5vw,3.8rem);line-height:1;color:#1C3D5A">{{ s.n }}</span>
+        <span style="font-size:13.5px;color:rgba(28,61,90,.62)">{{ s.label }}</span>
+      </div>
+    </sc-for>
+  </div>
+</section>
+
+<section id="propiedades" data-reveal style="background:#EDEAE3;padding:90px 20px">
+  <div style="max-width:1160px;margin:0 auto">
+    <div style="display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:12px;margin-bottom:40px">
+      <h2 style="margin:0;font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(2rem,4vw,3.2rem);letter-spacing:-.01em">Propiedades <em>destacadas</em></h2>
+      <span style="font-size:13.5px;color:rgba(28,61,90,.6)">{{ resultCount }} propiedades · precios en {{ moneda }}</span>
+    </div>
+    <div style="margin-bottom:36px;background:rgba(255,255,255,.7);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-radius:14px;padding:18px 20px;box-shadow:0 4px 18px rgba(28,61,90,.08);border:1px solid rgba(28,61,90,.06)">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;text-align:left">
+        <label style="display:flex;flex-direction:column;gap:5px;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:rgba(28,61,90,.55)">Operación
+          <select value="{{ fOperacion }}" onChange="{{ onOperacion }}" style="font-family:Inter,sans-serif;font-size:14px;color:#1C3D5A;background:#FEFEFE;border:1px solid rgba(28,61,90,.14);border-radius:8px;padding:9px 10px">
+            <option>Todas</option><option>Venta</option><option>Arriendo</option>
+          </select>
+        </label>
+        <label style="display:flex;flex-direction:column;gap:5px;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:rgba(28,61,90,.55)">Tipo
+          <select value="{{ fTipo }}" onChange="{{ onTipo }}" style="font-family:Inter,sans-serif;font-size:14px;color:#1C3D5A;background:#FEFEFE;border:1px solid rgba(28,61,90,.14);border-radius:8px;padding:9px 10px">
+            <option>Todos</option><option>Casa</option><option>Departamento</option><option>Oficina</option><option>Local</option>
+          </select>
+        </label>
+        <label style="display:flex;flex-direction:column;gap:5px;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:rgba(28,61,90,.55)">Región
+          <select value="{{ fRegion }}" onChange="{{ onRegion }}" style="font-family:Inter,sans-serif;font-size:14px;color:#1C3D5A;background:#FEFEFE;border:1px solid rgba(28,61,90,.14);border-radius:8px;padding:9px 10px">
+            <option>Todas</option><option>Metropolitana</option><option>Valparaíso</option><option>Coquimbo</option>
+          </select>
+        </label>
+        <label style="display:flex;flex-direction:column;gap:5px;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:rgba(28,61,90,.55)">Dormitorios
+          <select style="font-family:Inter,sans-serif;font-size:14px;color:#1C3D5A;background:#FEFEFE;border:1px solid rgba(28,61,90,.14);border-radius:8px;padding:9px 10px">
+            <option>Todos</option><option>1+</option><option>2+</option><option>3+</option><option>4+</option>
+          </select>
+        </label>
+        <label style="display:flex;flex-direction:column;gap:5px;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:rgba(28,61,90,.55)">Baños
+          <select style="font-family:Inter,sans-serif;font-size:14px;color:#1C3D5A;background:#FEFEFE;border:1px solid rgba(28,61,90,.14);border-radius:8px;padding:9px 10px">
+            <option>Todos</option><option>1+</option><option>2+</option><option>3+</option>
+          </select>
+        </label>
+        <label style="display:flex;flex-direction:column;gap:5px;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:rgba(28,61,90,.55)">Divisa
+          <select value="{{ moneda }}" onChange="{{ onMoneda }}" style="font-family:Inter,sans-serif;font-size:14px;color:#1C3D5A;background:#FEFEFE;border:1px solid rgba(28,61,90,.14);border-radius:8px;padding:9px 10px">
+            <option>UF</option><option>Pesos</option>
+          </select>
+        </label>
+        <div style="display:flex;flex-direction:column;justify-content:flex-end">
+          <button onClick="{{ onBuscar }}" style="font-family:Inter,sans-serif;cursor:pointer;font-size:14px;font-weight:600;background:#1C3D5A;color:#FEFEFE;border:none;border-radius:8px;padding:10px 18px" style-hover="background:#B08D57">Buscar</button>
+        </div>
+      </div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:26px">
+      <sc-for list="{{ props }}" as="p" hint-placeholder-count="0">
+        <article style="display:flex;flex-direction:column;gap:12px">
+          <div style="position:relative;border-radius:16px;overflow:hidden;aspect-ratio:4/3;background:#dcd8cf">
+            <img src="{{ p.img }}" alt="{{ p.alt }}" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease" style-hover="transform:scale(1.04)">
+            <span style="position:absolute;left:14px;bottom:14px;background:rgba(255,255,255,.78);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-radius:10px;padding:7px 13px;font-size:14.5px;font-weight:600;color:#B08D57">{{ p.precio }}</span>
+            <span style="position:absolute;right:14px;top:14px;background:rgba(28,61,90,.82);color:#FEFEFE;border-radius:8px;padding:5px 11px;font-size:11.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase">{{ p.op }}</span>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:3px;padding:0 4px">
+            <h3 style="margin:0;font-family:'Instrument Serif',serif;font-weight:400;font-size:21px">{{ p.nombre }}</h3>
+            <span style="font-size:13px;color:rgba(28,61,90,.6)">{{ p.comuna }} · Región {{ p.region }}</span>
+            <span style="font-size:13px;color:rgba(28,61,90,.75);margin-top:3px">{{ p.specs }}</span>
+          </div>
+        </article>
+      </sc-for>
+    </div>
+    <sc-if value="{{ noResults }}" hint-placeholder-val="{{ false }}">
+      <p style="margin:30px 0 0;font-size:14.5px;color:rgba(28,61,90,.65)">No hay propiedades que coincidan con tu búsqueda. Escríbenos por <a href="https://wa.me/56995377271" target="_blank" rel="noopener" style="color:#B08D57;font-weight:600">WhatsApp</a> y las buscamos por ti.</p>
+    </sc-if>
+  </div>
+</section>
+
+<section data-reveal style="background:#F8F7F4;padding:90px 20px">
+  <div style="max-width:1100px;margin:0 auto">
+    <h2 style="margin:0 0 48px;font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(2rem,4vw,3.2rem);letter-spacing:-.01em">Nuestros <em>servicios</em></h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:40px">
+      <div id="ventas" style="display:flex;flex-direction:column;gap:12px;border-top:1px solid rgba(28,61,90,.15);padding-top:22px">
+        <span style="font-family:'Instrument Serif',serif;font-size:34px;color:#B08D57">01</span>
+        <h3 style="margin:0;font-size:18px;font-weight:600">Venta y Arriendo</h3>
+        <p style="margin:0;font-size:14px;line-height:1.65;color:rgba(28,61,90,.7)">Comercializamos casas, departamentos, oficinas y locales en 6 regiones de Chile, con tasación realista y difusión efectiva.</p>
+      </div>
+      <div id="confienos" style="display:flex;flex-direction:column;gap:12px;border-top:1px solid rgba(28,61,90,.15);padding-top:22px">
+        <span style="font-family:'Instrument Serif',serif;font-size:34px;color:#B08D57">02</span>
+        <h3 style="margin:0;font-size:18px;font-weight:600">Confíenos su Propiedad</h3>
+        <p style="margin:0;font-size:14px;line-height:1.65;color:rgba(28,61,90,.7)">Administración integral: estudio de títulos, promesas de compraventa, permutas, hipotecas y restituciones, con respaldo legal completo.</p>
+      </div>
+      <div id="encargo" style="display:flex;flex-direction:column;gap:12px;border-top:1px solid rgba(28,61,90,.15);padding-top:22px">
+        <span style="font-family:'Instrument Serif',serif;font-size:34px;color:#B08D57">03</span>
+        <h3 style="margin:0;font-size:18px;font-weight:600">Encargo de Propiedad</h3>
+        <p style="margin:0;font-size:14px;line-height:1.65;color:rgba(28,61,90,.7)">Cuéntenos qué busca y lo encontramos por usted: búsqueda dirigida según su presupuesto, comuna y requisitos.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-reveal style="position:relative;min-height:420px;display:flex;align-items:center;overflow:hidden">
+  <img src="uploads/Italian Lakeside Retreat_ Timeless Luxury Villa.jfif" alt="Propiedad de alto valor gestionada por Finhabit" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
+  <div style="position:absolute;inset:0;background:linear-gradient(to right,rgba(28,61,90,.72),rgba(28,61,90,.25))"></div>
+  <div style="position:relative;z-index:2;max-width:1100px;margin:0 auto;padding:80px 20px;width:100%">
+    <h2 style="margin:0 0 34px;font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(1.9rem,3.6vw,3rem);color:#FEFEFE;max-width:560px">¿Por qué <em>Finhabit</em>?</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:22px;max-width:900px">
+      <sc-for list="{{ razones }}" as="r" hint-placeholder-count="4">
+        <div style="background:rgba(255,255,255,.14);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.22);border-radius:12px;padding:18px 18px;color:#FEFEFE;font-size:14px;font-weight:500;line-height:1.5">{{ r }}</div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<section id="contacto" data-reveal style="background:#F8F7F4;padding:90px 20px">
+  <div class="fh-2col" style="max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:start">
+    <div style="display:flex;flex-direction:column;gap:18px">
+      <h2 style="margin:0;font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(2rem,4vw,3.2rem);letter-spacing:-.01em">Hablemos de su <em>propiedad</em></h2>
+      <p style="margin:0;font-size:14.5px;line-height:1.65;color:rgba(28,61,90,.7)">Complete el formulario y le responderemos por WhatsApp o correo. También puede visitarnos en nuestra oficina de Vitacura.</p>
+      <div style="display:flex;flex-direction:column;gap:12px">
+        <input ref="{{ nombreRef }}" type="text" placeholder="Nombre" aria-label="Nombre" style="font-family:Inter,sans-serif;font-size:14px;color:#1C3D5A;background:#FEFEFE;border:1px solid rgba(28,61,90,.14);border-radius:10px;padding:13px 14px">
+        <input ref="{{ emailRef }}" type="email" placeholder="Email" aria-label="Email" style="font-family:Inter,sans-serif;font-size:14px;color:#1C3D5A;background:#FEFEFE;border:1px solid rgba(28,61,90,.14);border-radius:10px;padding:13px 14px">
+        <input ref="{{ fonoRef }}" type="tel" placeholder="Teléfono" aria-label="Teléfono" style="font-family:Inter,sans-serif;font-size:14px;color:#1C3D5A;background:#FEFEFE;border:1px solid rgba(28,61,90,.14);border-radius:10px;padding:13px 14px">
+        <textarea ref="{{ msjRef }}" placeholder="Mensaje" aria-label="Mensaje" rows="4" style="font-family:Inter,sans-serif;font-size:14px;color:#1C3D5A;background:#FEFEFE;border:1px solid rgba(28,61,90,.14);border-radius:10px;padding:13px 14px;resize:vertical"></textarea>
+        <button onClick="{{ onEnviar }}" style="font-family:Inter,sans-serif;cursor:pointer;font-size:14.5px;font-weight:600;background:#1C3D5A;color:#FEFEFE;border:none;border-radius:10px;padding:14px 20px" style-hover="background:#B08D57">Enviar por WhatsApp</button>
+        <sc-if value="{{ enviado }}" hint-placeholder-val="{{ false }}">
+          <span style="font-size:13px;color:#B08D57;font-weight:500">Se abrió WhatsApp con su mensaje. Si no ocurrió, escríbanos al +56 9 9537 7271.</span>
+        </sc-if>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:16px">
+      <a href="https://wa.me/56995377271" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:14px;background:#EDEAE3;border-radius:14px;padding:20px 22px" style-hover="background:#e4e0d6">
+        <span style="width:40px;height:40px;border-radius:10px;background:#B08D57;display:flex;align-items:center;justify-content:center;color:#FEFEFE;font-family:'Instrument Serif',serif;font-size:20px">W</span>
+        <span style="display:flex;flex-direction:column">
+          <strong style="font-size:15px">+56 9 9537 7271</strong>
+          <span style="font-size:12.5px;color:rgba(28,61,90,.6)">WhatsApp · respuesta directa</span>
+        </span>
+      </a>
+      <div style="display:flex;flex-direction:column;gap:2px;background:#EDEAE3;border-radius:14px;padding:20px 22px">
+        <strong style="font-size:15px">Av. Padre Hurtado Norte 1947</strong>
+        <span style="font-size:12.5px;color:rgba(28,61,90,.6)">Vitacura, Santiago · info@finhabit.cl</span>
+      </div>
+      <iframe title="Mapa oficina Finhabit, Av. Padre Hurtado Norte 1947, Vitacura" src="https://maps.google.com/maps?q=Av.%20Padre%20Hurtado%20Norte%201947%2C%20Vitacura%2C%20Santiago&z=15&output=embed" style="width:100%;height:280px;border:none;border-radius:14px" loading="lazy"></iframe>
+    </div>
+  </div>
+</section>
+
+<footer style="background:#1C3D5A;color:rgba(254,254,254,.85);padding:56px 20px 36px">
+  <div style="max-width:1100px;margin:0 auto;display:flex;flex-wrap:wrap;justify-content:space-between;gap:30px;align-items:flex-start">
+    <div style="display:flex;flex-direction:column;gap:10px">
+      <span style="display:flex;align-items:center;gap:9px">
+        <span style="width:20px;height:20px;border-radius:5px;background:#B08D57;display:inline-block"></span>
+        <span style="font-family:'Instrument Serif',serif;font-size:22px;color:#FEFEFE">Finhabit</span>
+      </span>
+      <span style="font-size:12.5px;color:rgba(254,254,254,.55);max-width:280px;line-height:1.6">Corredora de propiedades · Av. Padre Hurtado Norte 1947, Vitacura, Santiago</span>
+    </div>
+    <div style="display:flex;gap:26px;flex-wrap:wrap">
+      <a href="#propiedades" style="font-size:13px;color:rgba(254,254,254,.75)" style-hover="color:#B08D57">Propiedades</a>
+      <a href="#confienos" style="font-size:13px;color:rgba(254,254,254,.75)" style-hover="color:#B08D57">Confíenos su Propiedad</a>
+      <a href="#encargo" style="font-size:13px;color:rgba(254,254,254,.75)" style-hover="color:#B08D57">Encargo de Propiedad</a>
+      <a href="#contacto" style="font-size:13px;color:rgba(254,254,254,.75)" style-hover="color:#B08D57">Contacto</a>
+    </div>
+  </div>
+  <div style="max-width:1100px;margin:34px auto 0;border-top:1px solid rgba(254,254,254,.14);padding-top:20px;font-size:12px;color:rgba(254,254,254,.5)">© {{ year }} Finhabit Propiedades · info@finhabit.cl · +56 9 9537 7271</div>
+</footer>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{
+  &quot;moneda&quot;: {&quot;editor&quot;: &quot;enum&quot;, &quot;default&quot;: &quot;UF&quot;, &quot;options&quot;: [&quot;UF&quot;, &quot;CLP&quot;], &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Contenido&quot;},
+  &quot;ufValor&quot;: {&quot;editor&quot;: &quot;int&quot;, &quot;default&quot;: 39250, &quot;min&quot;: 30000, &quot;max&quot;: 50000, &quot;unit&quot;: &quot;CLP&quot;, &quot;tsType&quot;: &quot;number&quot;, &quot;section&quot;: &quot;Contenido&quot;},
+  &quot;mostrarVideo&quot;: {&quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Hero&quot;}
+}">
+class Component extends DCLogic {
+  state = { fOperacion: 'Todas', fTipo: 'Todos', fRegion: 'Todas', moneda: 'UF', enviado: false };
+  nombreRef = React.createRef(); emailRef = React.createRef(); fonoRef = React.createRef(); msjRef = React.createRef();
+  statsDef = [
+    { target: 30, suffix: '+', label: 'Años de trayectoria' },
+    { target: 112, suffix: '+', label: 'Propiedades en cartera' },
+    { target: 6, suffix: '', label: 'Regiones cubiertas' },
+    { target: 3, suffix: '', label: 'Tipos de servicio' },
+  ];
+  data = [
+    { img: 'uploads/descarga (1).jfif', alt: 'Casa con muelle privado frente al lago', nombre: 'Casa frente al lago', comuna: 'Las Cabras', region: 'Metropolitana', tipo: 'Casa', op: 'Venta', uf: 28900, m2: 320, dorm: 5, banos: 4 },
+    { img: 'uploads/a.jfif', alt: 'Departamento con vista panorámica a la bahía', nombre: 'Depto vista al mar', comuna: 'Las Condes', region: 'Metropolitana', tipo: 'Departamento', op: 'Venta', uf: 19500, m2: 185, dorm: 3, banos: 3 },
+    { img: 'uploads/descarga (2).jfif', alt: 'Villa con jardines y piscina frente al agua', nombre: 'Villa con piscina', comuna: 'Zapallar', region: 'Valparaíso', tipo: 'Casa', op: 'Venta', uf: 42000, m2: 480, dorm: 6, banos: 6 },
+    { img: 'uploads/descarga (3).jfif', alt: 'Casa clásica rodeada de jardines junto al agua', nombre: 'Casa patrimonial', comuna: 'Cachagua', region: 'Valparaíso', tipo: 'Casa', op: 'Venta', uf: 35500, m2: 410, dorm: 5, banos: 5 },
+    { img: 'uploads/descarga (4).jfif', alt: 'Living luminoso con vista al lago y la montaña', nombre: 'Depto premium', comuna: 'Ñuñoa', region: 'Metropolitana', tipo: 'Departamento', op: 'Arriendo', uf: 62, m2: 140, dorm: 3, banos: 2 },
+    { img: 'uploads/descarga (5).jfif', alt: 'Terraza con piscina infinita y vista a la costa', nombre: 'Casa vista costa', comuna: 'La Serena', region: 'Coquimbo', tipo: 'Casa', op: 'Venta', uf: 24800, m2: 290, dorm: 4, banos: 3 },
+    { img: 'uploads/lucid-origin_High-end_architectural_photography_interior_of_a_private_library_and_home_office-0.jpg', alt: 'Oficina privada con biblioteca en madera noble', nombre: 'Oficina ejecutiva', comuna: 'Santiago Centro', region: 'Metropolitana', tipo: 'Oficina', op: 'Arriendo', uf: 48, m2: 96, dorm: 0, banos: 1 },
+    { img: 'uploads/lucid-origin_A_dramatic_architectural_interior_photograph_of_a_grand_double-height_foyer_with-0.jpg', alt: 'Hall de doble altura con escalera de mármol y lámpara de cristal', nombre: 'Mansión clásica', comuna: 'Lo Barnechea', region: 'Metropolitana', tipo: 'Casa', op: 'Venta', uf: 58000, m2: 620, dorm: 7, banos: 8 },
+    { img: 'uploads/lucid-origin_Ultra-luxurious_modern_mansion_exterior_in_Beverly_Hills_architectural_studio_ph-0.jpg', alt: 'Casa moderna de líneas rectas con piscina y jardín geométrico', nombre: 'Casa moderna con piscina', comuna: 'Vitacura', region: 'Metropolitana', tipo: 'Casa', op: 'Venta', uf: 46500, m2: 540, dorm: 5, banos: 6 },
+  ];
+  fmtPrecio(p) {
+    const mes = p.op === 'Arriendo' ? '/mes' : '';
+    const moneda = this.state.monedaTouched ? this.state.moneda : (this.props.moneda ?? 'UF');
+    if (moneda === 'UF') return 'UF ' + p.uf.toLocaleString('es-CL') + mes;
+    return '$' + Math.round(p.uf * (this.props.ufValor ?? 39250)).toLocaleString('es-CL') + mes;
+  }
+  componentDidMount() {
+    const keepPlaying = () => {
+      const v = document.querySelector('[data-hero-video]');
+      if (v) { v.muted = true; if (v.paused) v.play().catch(() => {}); }
+    };
+    keepPlaying();
+    this._vidInterval = setInterval(keepPlaying, 1500);
+    document.addEventListener('visibilitychange', keepPlaying);
+    this._keepPlaying = keepPlaying;
+    const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!reduced) {
+      this.setState({ counts: this.statsDef.map(() => 0) });
+      const statsEl = document.querySelector('[data-stats]');
+      if (statsEl) {
+        this._statsIo = new IntersectionObserver(en => {
+          if (!en.some(e => e.isIntersecting) || this._counting) return;
+          this._counting = true;
+          this._statsIo.disconnect();
+          const t0 = performance.now(), dur = 1600;
+          const tick = now => {
+            const p = Math.min(1, (now - t0) / dur), ease = 1 - Math.pow(1 - p, 3);
+            this.setState({ counts: this.statsDef.map(d => Math.round(d.target * ease)) });
+            if (p < 1) requestAnimationFrame(tick);
+          };
+          requestAnimationFrame(tick);
+        }, { threshold: .4 });
+        this._statsIo.observe(statsEl);
+      }
+    }
+    if (reduced) return;
+    const els = document.querySelectorAll('[data-reveal]');
+    els.forEach(el => { el.style.opacity = '0'; el.style.transform = 'translateY(26px)'; el.style.transition = 'opacity .7s ease, transform .7s ease'; });
+    this._io = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.style.opacity = '1'; e.target.style.transform = 'none'; this._io.unobserve(e.target); } });
+    }, { threshold: .1 });
+    els.forEach(el => this._io.observe(el));
+  }
+  componentWillUnmount() {
+    if (this._io) this._io.disconnect();
+    if (this._vidInterval) clearInterval(this._vidInterval);
+    if (this._keepPlaying) document.removeEventListener('visibilitychange', this._keepPlaying);
+  }
+  renderVals() {
+    const s = this.state;
+    const filtered = this.data.filter(p =>
+      (s.fOperacion === 'Todas' || p.op === s.fOperacion) &&
+      (s.fTipo === 'Todos' || p.tipo === s.fTipo) &&
+      (s.fRegion === 'Todas' || p.region === s.fRegion));
+    const props = filtered.map(p => ({ ...p, precio: this.fmtPrecio(p),
+      specs: p.m2 + ' m²' + (p.dorm ? ' · ' + p.dorm + ' dorm' : '') + ' · ' + p.banos + (p.banos === 1 ? ' baño' : ' baños') }));
+    const scrollToProps = () => {
+      const el = document.getElementById('propiedades');
+      if (el) window.scrollTo({ top: el.getBoundingClientRect().top + window.pageYOffset - 60, behavior: 'smooth' });
+    };
+    const monedaActiva = s.monedaTouched ? s.moneda : (this.props.moneda ?? 'UF');
+    return {
+      fOperacion: s.fOperacion, fTipo: s.fTipo, fRegion: s.fRegion,
+      mostrarVideo: this.props.mostrarVideo ?? true, sinVideo: !(this.props.mostrarVideo ?? true),
+      moneda: monedaActiva === 'UF' ? 'UF' : 'Pesos', props, resultCount: props.length, noResults: props.length === 0,
+      stats: this.statsDef.map((d, i) => ({ n: (s.counts ? s.counts[i] : d.target) + d.suffix, label: d.label })),
+      razones: ['30 años de trayectoria', 'Cobertura en 6 regiones', 'Estudio de títulos incluido', 'Atención directa por WhatsApp'],
+      year: new Date().getFullYear(),
+      nombreRef: this.nombreRef, emailRef: this.emailRef, fonoRef: this.fonoRef, msjRef: this.msjRef,
+      enviado: s.enviado,
+      onOperacion: e => this.setState({ fOperacion: e.target.value }),
+      onTipo: e => this.setState({ fTipo: e.target.value }),
+      onRegion: e => this.setState({ fRegion: e.target.value }),
+      onMoneda: e => this.setState({ moneda: e.target.value === 'Pesos' ? 'CLP' : 'UF', monedaTouched: true }),
+      onBuscar: scrollToProps,
+      onEnviar: () => {
+        const n = this.nombreRef.current?.value || '', em = this.emailRef.current?.value || '',
+          f = this.fonoRef.current?.value || '', m = this.msjRef.current?.value || '';
+        const txt = `Hola, soy ${n || '...'}.\n${m || 'Quiero información sobre propiedades.'}\nEmail: ${em || '-'} · Fono: ${f || '-'}`;
+        window.open('https://wa.me/56995377271?text=' + encodeURIComponent(txt), '_blank');
+        this.setState({ enviado: true });
+      },
+    };
+  }
+}
+</script>
+</body>
+</html>
