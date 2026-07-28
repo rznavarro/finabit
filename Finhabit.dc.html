@@ -357,21 +357,26 @@ class Component extends DCLogic {
     if (this._keepPlaying) document.removeEventListener('visibilitychange', this._keepPlaying);
     if (this._stackCleanup) this._stackCleanup();
     if (this._sphereCleanup) this._sphereCleanup();
-    if (this._navIo) this._navIo.disconnect();
+    if (this._navCleanup) this._navCleanup();
   }
   initNavHide() {
     const navEl = document.querySelector('[data-nav]');
     const navInner = navEl && navEl.querySelector('div');
     const porqueEl = document.getElementById('porque');
     if (!navEl || !navInner || !porqueEl) return;
-    this._navIo = new IntersectionObserver(entries => {
-      entries.forEach(e => {
-        navEl.style.opacity = e.isIntersecting ? '0' : '1';
-        navEl.style.transform = e.isIntersecting ? 'translateY(-16px)' : 'none';
-        navInner.style.pointerEvents = e.isIntersecting ? 'none' : 'auto';
-      });
-    }, { threshold: 0 });
-    this._navIo.observe(porqueEl);
+    let hidden = null;
+    const check = () => {
+      const top = porqueEl.getBoundingClientRect().top + window.scrollY;
+      const shouldHide = window.scrollY >= top;
+      if (shouldHide === hidden) return;
+      hidden = shouldHide;
+      navEl.style.opacity = hidden ? '0' : '1';
+      navEl.style.transform = hidden ? 'translateY(-16px)' : 'none';
+      navInner.style.pointerEvents = hidden ? 'none' : 'auto';
+    };
+    check();
+    window.addEventListener('scroll', check, { passive: true });
+    this._navCleanup = () => window.removeEventListener('scroll', check);
   }
   initStack() {
     const stage = document.querySelector('[data-stack-stage]');
