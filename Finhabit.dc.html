@@ -21,7 +21,7 @@ body{margin:0;font-family:Inter,system-ui,sans-serif;color:#1C3D5A;background:#F
 a{color:#1C3D5A;text-decoration:none}
 a:hover{color:#B08D57}
 @media (max-width:760px){.fh-navlinks{display:none!important}.fh-2col{grid-template-columns:1fr!important}}
-@media (max-width:760px){[data-sphere-text]{left:50%!important;top:auto!important;bottom:8%!important;transform:translateX(-50%)!important;text-align:center;max-width:88%!important}}
+@media (max-width:760px){[data-sphere-text]{left:50%!important;top:auto!important;bottom:16%!important;transform:translateX(-50%)!important;text-align:center;max-width:88%!important}}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 </style>
 </helmet>
@@ -41,7 +41,7 @@ a:hover{color:#B08D57}
 
 <header id="inicio" style="position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;overflow:hidden">
   <sc-if value="{{ mostrarVideo }}" hint-placeholder-val="{{ true }}">
-    <video data-hero-video autoPlay muted loop playsInline preload="auto" poster="imagenes/1.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top;z-index:0" src="video/hero.mp4"></video>
+    <video data-bg-video autoPlay muted loop playsInline preload="auto" poster="imagenes/1.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top;z-index:0" src="video/hero.mp4"></video>
   </sc-if>
   <sc-if value="{{ sinVideo }}" hint-placeholder-val="{{ false }}">
     <img src="imagenes/1.jpg" alt="Departamento de lujo con vista panorámica" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top;z-index:0">
@@ -218,7 +218,7 @@ a:hover{color:#B08D57}
     <h2 style="margin:0;font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(1.9rem,3.6vw,3rem);color:#FEFEFE;text-align:center">¿Por qué <em>Finhabit</em>?</h2>
   </div>
   <div data-sphere-scroll style="position:relative;height:300vh">
-    <div data-sphere-scene style="position:sticky;top:0;height:100vh;width:100%;display:flex;justify-content:center;align-items:center;perspective:1200px;overflow:hidden">
+    <div data-sphere-scene style="position:sticky;top:0;height:100vh;height:100svh;width:100%;display:flex;justify-content:center;align-items:center;perspective:1200px;overflow:hidden">
       <div data-sphere-text style="position:absolute;left:6%;top:50%;transform:translateY(-50%);max-width:320px;z-index:10">
         <h3 data-sphere-title style="margin:0 0 10px;font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(1.6rem,3vw,2.1rem);color:#FEFEFE;text-shadow:0 4px 14px rgba(0,0,0,.5)">30 años de trayectoria</h3>
         <p data-sphere-desc style="margin:0;color:rgba(254,254,254,.72);font-size:14.5px;line-height:1.6;text-shadow:0 2px 10px rgba(0,0,0,.4)">Más de tres décadas conectando personas con la propiedad correcta en Chile.</p>
@@ -228,11 +228,13 @@ a:hover{color:#B08D57}
   </div>
 </section>
 
-<section id="contacto" data-reveal style="background:#F8F7F4;padding:90px 20px">
-  <div class="fh-2col" style="max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:start">
+<section id="contacto" data-reveal style="position:relative;padding:90px 20px;overflow:hidden">
+  <video data-bg-video autoPlay muted loop playsInline preload="auto" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0" src="video/contacto.mp4"></video>
+  <div style="position:absolute;inset:0;background:rgba(19,42,64,.72);z-index:1"></div>
+  <div class="fh-2col" style="position:relative;z-index:2;max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:start">
     <div style="display:flex;flex-direction:column;gap:18px">
-      <h2 style="margin:0;font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(2rem,4vw,3.2rem);letter-spacing:-.01em">Hablemos de su <em>propiedad</em></h2>
-      <p style="margin:0;font-size:14.5px;line-height:1.65;color:rgba(28,61,90,.7)">Complete el formulario y le responderemos por WhatsApp o correo. También puede visitarnos en nuestra oficina de Vitacura.</p>
+      <h2 style="margin:0;font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(2rem,4vw,3.2rem);letter-spacing:-.01em;color:#FEFEFE">Hablemos de su <em>propiedad</em></h2>
+      <p style="margin:0;font-size:14.5px;line-height:1.65;color:rgba(254,254,254,.8)">Complete el formulario y le responderemos por WhatsApp o correo. También puede visitarnos en nuestra oficina de Vitacura.</p>
       <div style="display:flex;flex-direction:column;gap:12px">
         <input ref="{{ nombreRef }}" type="text" placeholder="Nombre" aria-label="Nombre" style="font-family:Inter,sans-serif;font-size:14px;color:#1C3D5A;background:#FEFEFE;border:1px solid rgba(28,61,90,.14);border-radius:10px;padding:13px 14px">
         <input ref="{{ emailRef }}" type="email" placeholder="Email" aria-label="Email" style="font-family:Inter,sans-serif;font-size:14px;color:#1C3D5A;background:#FEFEFE;border:1px solid rgba(28,61,90,.14);border-radius:10px;padding:13px 14px">
@@ -245,16 +247,16 @@ a:hover{color:#B08D57}
       </div>
     </div>
     <div style="display:flex;flex-direction:column;gap:16px">
-      <a href="https://wa.me/56995377271" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:14px;background:#EDEAE3;border-radius:14px;padding:20px 22px" style-hover="background:#e4e0d6">
-        <span style="width:40px;height:40px;border-radius:10px;background:#B08D57;display:flex;align-items:center;justify-content:center;color:#FEFEFE;font-family:'Instrument Serif',serif;font-size:20px">W</span>
+      <a href="https://wa.me/56995377271" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:14px;background:rgba(255,255,255,.12);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.2);border-radius:14px;padding:20px 22px" style-hover="background:rgba(255,255,255,.2)">
+        <span style="width:40px;height:40px;border-radius:10px;background:#B08D57;display:flex;align-items:center;justify-content:center;color:#FEFEFE;font-family:'Instrument Serif',serif;font-size:20px;flex-shrink:0">W</span>
         <span style="display:flex;flex-direction:column">
-          <strong style="font-size:15px">+56 9 9537 7271</strong>
-          <span style="font-size:12.5px;color:rgba(28,61,90,.6)">WhatsApp · respuesta directa</span>
+          <strong style="font-size:15px;color:#FEFEFE">+56 9 9537 7271</strong>
+          <span style="font-size:12.5px;color:rgba(254,254,254,.7)">WhatsApp · respuesta directa</span>
         </span>
       </a>
-      <div style="display:flex;flex-direction:column;gap:2px;background:#EDEAE3;border-radius:14px;padding:20px 22px">
-        <strong style="font-size:15px">Av. Padre Hurtado Norte 1947</strong>
-        <span style="font-size:12.5px;color:rgba(28,61,90,.6)">Vitacura, Santiago · info@finhabit.cl</span>
+      <div style="display:flex;flex-direction:column;gap:2px;background:rgba(255,255,255,.12);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.2);border-radius:14px;padding:20px 22px">
+        <strong style="font-size:15px;color:#FEFEFE">Av. Padre Hurtado Norte 1947</strong>
+        <span style="font-size:12.5px;color:rgba(254,254,254,.7)">Vitacura, Santiago · info@finhabit.cl</span>
       </div>
       <iframe title="Mapa oficina Finhabit, Av. Padre Hurtado Norte 1947, Vitacura" src="https://maps.google.com/maps?q=Av.%20Padre%20Hurtado%20Norte%201947%2C%20Vitacura%2C%20Santiago&z=15&output=embed" style="width:100%;height:280px;border:none;border-radius:14px" loading="lazy"></iframe>
     </div>
@@ -313,8 +315,7 @@ class Component extends DCLogic {
   }
   componentDidMount() {
     const keepPlaying = () => {
-      const v = document.querySelector('[data-hero-video]');
-      if (v) { v.muted = true; if (v.paused) v.play().catch(() => {}); }
+      document.querySelectorAll('[data-bg-video]').forEach(v => { v.muted = true; if (v.paused) v.play().catch(() => {}); });
     };
     keepPlaying();
     this._vidInterval = setInterval(keepPlaying, 1500);
