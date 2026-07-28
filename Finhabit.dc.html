@@ -425,16 +425,23 @@ class Component extends DCLogic {
     const scrollEl = document.querySelector('[data-sphere-scroll]');
     if (!el || !scrollEl || !window.gsap || !window.ScrollTrigger) return;
     gsap.registerPlugin(ScrollTrigger);
+    const isMobile = window.innerWidth < 768;
     const imgs = ['imagenes/1.jpg', 'imagenes/2.jpg', 'imagenes/3.jpg', 'imagenes/4.jpg', 'imagenes/5.jpg', 'imagenes/6.jpg', 'imagenes/7.jpg', 'imagenes/8.jpg', 'imagenes/9.jpg'];
-    const items = [...imgs, ...imgs, ...imgs].slice(0, 24);
-    const radius = window.innerWidth < 768 ? 170 : 330;
+    const itemCount = isMobile ? 15 : 24;
+    const items = [...imgs, ...imgs, ...imgs].slice(0, itemCount);
+    const radius = isMobile ? 150 : 330;
+    const cardW = isMobile ? 100 : 140, cardH = isMobile ? 138 : 190;
+    const baseShadow = isMobile ? '0 8px 16px rgba(0,0,0,.45)' : '0 14px 30px rgba(0,0,0,.5)';
+    const focusShadow = isMobile ? '0 0 16px rgba(176,141,87,.4), 0 8px 16px rgba(0,0,0,.45)' : '0 0 30px rgba(176,141,87,.45), 0 14px 30px rgba(0,0,0,.5)';
+    el.style.willChange = 'transform';
     const cards = items.map((src, i) => {
       const card = document.createElement('div');
-      card.style.cssText = 'position:absolute;width:140px;height:190px;left:-70px;top:-95px;border-radius:16px;overflow:hidden;border:2px solid rgba(255,255,255,.15);box-shadow:0 14px 30px rgba(0,0,0,.5);transition:filter .4s ease,box-shadow .4s ease,border-color .4s ease';
+      card.style.cssText = `position:absolute;width:${cardW}px;height:${cardH}px;left:${-cardW / 2}px;top:${-cardH / 2}px;border-radius:14px;overflow:hidden;border:2px solid rgba(255,255,255,.15);box-shadow:${baseShadow};transition:filter .4s ease,box-shadow .4s ease,border-color .4s ease`;
       const img = document.createElement('img');
       img.src = src;
       img.alt = '';
       img.draggable = false;
+      img.loading = 'lazy';
       img.style.cssText = 'width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(85%) brightness(.55);transition:filter .4s ease';
       card.appendChild(img);
       const phi = Math.acos(1 - (2 * (i + 0.5)) / items.length);
@@ -457,7 +464,7 @@ class Component extends DCLogic {
     const titleEl = document.querySelector('[data-sphere-title]');
     const descEl = document.querySelector('[data-sphere-desc]');
     const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
-    let shownIdx = 0;
+    let shownIdx = 0, shownFocus = -1;
     const setActive = progress => {
       const textIdx = Math.min(texts.length - 1, Math.floor(progress * texts.length));
       if (textIdx !== shownIdx) {
@@ -476,11 +483,13 @@ class Component extends DCLogic {
         }
       }
       const focusIdx = Math.min(cards.length - 1, Math.floor(progress * cards.length));
+      if (focusIdx === shownFocus) return;
+      shownFocus = focusIdx;
       cards.forEach(({ card, img }, idx) => {
         const isFocus = Math.abs(idx - focusIdx) < 2;
         img.style.filter = isFocus ? 'grayscale(0%) brightness(1)' : 'grayscale(85%) brightness(.55)';
         card.style.borderColor = isFocus ? 'rgba(176,141,87,.6)' : 'rgba(255,255,255,.15)';
-        card.style.boxShadow = isFocus ? '0 0 30px rgba(176,141,87,.45), 0 14px 30px rgba(0,0,0,.5)' : '0 14px 30px rgba(0,0,0,.5)';
+        card.style.boxShadow = isFocus ? focusShadow : baseShadow;
       });
     };
     const tween = gsap.to(el, {
