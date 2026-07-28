@@ -41,10 +41,10 @@ a:hover{color:#B08D57}
 
 <header id="inicio" style="position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;overflow:hidden">
   <sc-if value="{{ mostrarVideo }}" hint-placeholder-val="{{ true }}">
-    <video data-hero-video autoPlay muted loop playsInline preload="auto" poster="uploads/a.jfif" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top;z-index:0" src="uploads/Wan_Video_Generate_Create a seamless cinematic one-shot transition between the p (1).mp4"></video>
+    <video data-hero-video autoPlay muted loop playsInline preload="auto" poster="imagenes/1.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top;z-index:0" src="video/hero.mp4"></video>
   </sc-if>
   <sc-if value="{{ sinVideo }}" hint-placeholder-val="{{ false }}">
-    <img src="uploads/a.jfif" alt="Departamento de lujo con vista panorámica" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top;z-index:0">
+    <img src="imagenes/1.jpg" alt="Departamento de lujo con vista panorámica" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top;z-index:0">
   </sc-if>
   <div style="position:relative;z-index:10;width:100%;max-width:1100px;margin:0 auto;padding:120px 20px 60px;display:flex;flex-direction:column;align-items:center;text-align:center">
     <div style="margin-bottom:24px;display:inline-flex;align-items:center;gap:9px;border:1px solid rgba(28,61,90,.1);background:rgba(255,255,255,.7);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);border-radius:12px;padding:8px 16px;font-size:13.5px;font-weight:500">
@@ -157,7 +157,7 @@ a:hover{color:#B08D57}
 </section>
 
 <section data-reveal style="position:relative;min-height:420px;display:flex;align-items:center;overflow:hidden">
-  <img src="uploads/Italian Lakeside Retreat_ Timeless Luxury Villa.jfif" alt="Propiedad de alto valor gestionada por Finhabit" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
+  <img src="imagenes/3.jpg" alt="Propiedad de alto valor gestionada por Finhabit" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
   <div style="position:absolute;inset:0;background:linear-gradient(to right,rgba(28,61,90,.72),rgba(28,61,90,.25))"></div>
   <div style="position:relative;z-index:2;max-width:1100px;margin:0 auto;padding:80px 20px;width:100%">
     <h2 style="margin:0 0 34px;font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(1.9rem,3.6vw,3rem);color:#FEFEFE;max-width:560px">¿Por qué <em>Finhabit</em>?</h2>
@@ -236,15 +236,15 @@ class Component extends DCLogic {
     { target: 3, suffix: '', label: 'Tipos de servicio' },
   ];
   data = [
-    { img: 'uploads/descarga (1).jfif', alt: 'Casa con muelle privado frente al lago', nombre: 'Casa frente al lago', comuna: 'Las Cabras', region: 'Metropolitana', tipo: 'Casa', op: 'Venta', uf: 28900, m2: 320, dorm: 5, banos: 4 },
-    { img: 'uploads/a.jfif', alt: 'Departamento con vista panorámica a la bahía', nombre: 'Depto vista al mar', comuna: 'Las Condes', region: 'Metropolitana', tipo: 'Departamento', op: 'Venta', uf: 19500, m2: 185, dorm: 3, banos: 3 },
-    { img: 'uploads/descarga (2).jfif', alt: 'Villa con jardines y piscina frente al agua', nombre: 'Villa con piscina', comuna: 'Zapallar', region: 'Valparaíso', tipo: 'Casa', op: 'Venta', uf: 42000, m2: 480, dorm: 6, banos: 6 },
-    { img: 'uploads/descarga (3).jfif', alt: 'Casa clásica rodeada de jardines junto al agua', nombre: 'Casa patrimonial', comuna: 'Cachagua', region: 'Valparaíso', tipo: 'Casa', op: 'Venta', uf: 35500, m2: 410, dorm: 5, banos: 5 },
-    { img: 'uploads/descarga (4).jfif', alt: 'Living luminoso con vista al lago y la montaña', nombre: 'Depto premium', comuna: 'Ñuñoa', region: 'Metropolitana', tipo: 'Departamento', op: 'Arriendo', uf: 62, m2: 140, dorm: 3, banos: 2 },
-    { img: 'uploads/descarga (5).jfif', alt: 'Terraza con piscina infinita y vista a la costa', nombre: 'Casa vista costa', comuna: 'La Serena', region: 'Coquimbo', tipo: 'Casa', op: 'Venta', uf: 24800, m2: 290, dorm: 4, banos: 3 },
-    { img: 'uploads/lucid-origin_High-end_architectural_photography_interior_of_a_private_library_and_home_office-0.jpg', alt: 'Oficina privada con biblioteca en madera noble', nombre: 'Oficina ejecutiva', comuna: 'Santiago Centro', region: 'Metropolitana', tipo: 'Oficina', op: 'Arriendo', uf: 48, m2: 96, dorm: 0, banos: 1 },
-    { img: 'uploads/lucid-origin_A_dramatic_architectural_interior_photograph_of_a_grand_double-height_foyer_with-0.jpg', alt: 'Hall de doble altura con escalera de mármol y lámpara de cristal', nombre: 'Mansión clásica', comuna: 'Lo Barnechea', region: 'Metropolitana', tipo: 'Casa', op: 'Venta', uf: 58000, m2: 620, dorm: 7, banos: 8 },
-    { img: 'uploads/lucid-origin_Ultra-luxurious_modern_mansion_exterior_in_Beverly_Hills_architectural_studio_ph-0.jpg', alt: 'Casa moderna de líneas rectas con piscina y jardín geométrico', nombre: 'Casa moderna con piscina', comuna: 'Vitacura', region: 'Metropolitana', tipo: 'Casa', op: 'Venta', uf: 46500, m2: 540, dorm: 5, banos: 6 },
+    { img: 'imagenes/1.jpg', alt: 'Casa con muelle privado frente al lago', nombre: 'Casa frente al lago', comuna: 'Las Cabras', region: 'Metropolitana', tipo: 'Casa', op: 'Venta', uf: 28900, m2: 320, dorm: 5, banos: 4 },
+    { img: 'imagenes/2.jpg', alt: 'Departamento con vista panorámica a la bahía', nombre: 'Depto vista al mar', comuna: 'Las Condes', region: 'Metropolitana', tipo: 'Departamento', op: 'Venta', uf: 19500, m2: 185, dorm: 3, banos: 3 },
+    { img: 'imagenes/3.jpg', alt: 'Villa con jardines y piscina frente al agua', nombre: 'Villa con piscina', comuna: 'Zapallar', region: 'Valparaíso', tipo: 'Casa', op: 'Venta', uf: 42000, m2: 480, dorm: 6, banos: 6 },
+    { img: 'imagenes/4.jpg', alt: 'Casa clásica rodeada de jardines junto al agua', nombre: 'Casa patrimonial', comuna: 'Cachagua', region: 'Valparaíso', tipo: 'Casa', op: 'Venta', uf: 35500, m2: 410, dorm: 5, banos: 5 },
+    { img: 'imagenes/5.jpg', alt: 'Living luminoso con vista al lago y la montaña', nombre: 'Depto premium', comuna: 'Ñuñoa', region: 'Metropolitana', tipo: 'Departamento', op: 'Arriendo', uf: 62, m2: 140, dorm: 3, banos: 2 },
+    { img: 'imagenes/6.jpg', alt: 'Terraza con piscina infinita y vista a la costa', nombre: 'Casa vista costa', comuna: 'La Serena', region: 'Coquimbo', tipo: 'Casa', op: 'Venta', uf: 24800, m2: 290, dorm: 4, banos: 3 },
+    { img: 'imagenes/7.jpg', alt: 'Oficina privada con biblioteca en madera noble', nombre: 'Oficina ejecutiva', comuna: 'Santiago Centro', region: 'Metropolitana', tipo: 'Oficina', op: 'Arriendo', uf: 48, m2: 96, dorm: 0, banos: 1 },
+    { img: 'imagenes/8.jpg', alt: 'Hall de doble altura con escalera de mármol y lámpara de cristal', nombre: 'Mansión clásica', comuna: 'Lo Barnechea', region: 'Metropolitana', tipo: 'Casa', op: 'Venta', uf: 58000, m2: 620, dorm: 7, banos: 8 },
+    { img: 'imagenes/9.jpg', alt: 'Casa moderna de líneas rectas con piscina y jardín geométrico', nombre: 'Casa moderna con piscina', comuna: 'Vitacura', region: 'Metropolitana', tipo: 'Casa', op: 'Venta', uf: 46500, m2: 540, dorm: 5, banos: 6 },
   ];
   fmtPrecio(p) {
     const mes = p.op === 'Arriendo' ? '/mes' : '';
