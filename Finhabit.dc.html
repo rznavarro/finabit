@@ -161,43 +161,6 @@ a:hover{color:#B08D57}
       <h2 style="margin:0;font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(2rem,4vw,3.2rem);letter-spacing:-.01em">Todas las <em>propiedades</em></h2>
       <span style="font-size:13.5px;color:rgba(28,61,90,.6)">{{ resultCount }} propiedades · precios en {{ moneda }}</span>
     </div>
-    <div style="margin-bottom:36px;background:rgba(255,255,255,.7);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-radius:14px;padding:18px 20px;box-shadow:0 4px 18px rgba(28,61,90,.08);border:1px solid rgba(28,61,90,.06)">
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;text-align:left">
-        <label style="display:flex;flex-direction:column;gap:5px;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:rgba(28,61,90,.55)">Operación
-          <select value="{{ fOperacion }}" onChange="{{ onOperacion }}" style="font-family:Inter,sans-serif;font-size:14px;color:#1C3D5A;background:#FEFEFE;border:1px solid rgba(28,61,90,.14);border-radius:8px;padding:9px 10px">
-            <option>Todas</option><option>Venta</option><option>Arriendo</option>
-          </select>
-        </label>
-        <label style="display:flex;flex-direction:column;gap:5px;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:rgba(28,61,90,.55)">Tipo
-          <select value="{{ fTipo }}" onChange="{{ onTipo }}" style="font-family:Inter,sans-serif;font-size:14px;color:#1C3D5A;background:#FEFEFE;border:1px solid rgba(28,61,90,.14);border-radius:8px;padding:9px 10px">
-            <option>Todos</option><option>Casa</option><option>Departamento</option><option>Oficina</option><option>Local</option>
-          </select>
-        </label>
-        <label style="display:flex;flex-direction:column;gap:5px;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:rgba(28,61,90,.55)">Región
-          <select value="{{ fRegion }}" onChange="{{ onRegion }}" style="font-family:Inter,sans-serif;font-size:14px;color:#1C3D5A;background:#FEFEFE;border:1px solid rgba(28,61,90,.14);border-radius:8px;padding:9px 10px">
-            <option>Todas</option><option>Metropolitana</option><option>Valparaíso</option><option>Coquimbo</option>
-          </select>
-        </label>
-        <label style="display:flex;flex-direction:column;gap:5px;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:rgba(28,61,90,.55)">Dormitorios
-          <select style="font-family:Inter,sans-serif;font-size:14px;color:#1C3D5A;background:#FEFEFE;border:1px solid rgba(28,61,90,.14);border-radius:8px;padding:9px 10px">
-            <option>Todos</option><option>1+</option><option>2+</option><option>3+</option><option>4+</option>
-          </select>
-        </label>
-        <label style="display:flex;flex-direction:column;gap:5px;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:rgba(28,61,90,.55)">Baños
-          <select style="font-family:Inter,sans-serif;font-size:14px;color:#1C3D5A;background:#FEFEFE;border:1px solid rgba(28,61,90,.14);border-radius:8px;padding:9px 10px">
-            <option>Todos</option><option>1+</option><option>2+</option><option>3+</option>
-          </select>
-        </label>
-        <label style="display:flex;flex-direction:column;gap:5px;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:rgba(28,61,90,.55)">Divisa
-          <select value="{{ moneda }}" onChange="{{ onMoneda }}" style="font-family:Inter,sans-serif;font-size:14px;color:#1C3D5A;background:#FEFEFE;border:1px solid rgba(28,61,90,.14);border-radius:8px;padding:9px 10px">
-            <option>UF</option><option>Pesos</option>
-          </select>
-        </label>
-        <div style="display:flex;flex-direction:column;justify-content:flex-end">
-          <button onClick="{{ onBuscar }}" style="font-family:Inter,sans-serif;cursor:pointer;font-size:14px;font-weight:600;background:#1C3D5A;color:#FEFEFE;border:none;border-radius:8px;padding:10px 18px" style-hover="background:#B08D57">Buscar</button>
-        </div>
-      </div>
-    </div>
     <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:26px">
       <sc-for list="{{ props }}" as="p" hint-placeholder-count="0">
         <article style="display:flex;flex-direction:column;gap:12px">
