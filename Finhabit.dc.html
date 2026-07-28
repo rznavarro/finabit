@@ -23,11 +23,12 @@ a:hover{color:#B08D57}
 @media (max-width:760px){.fh-navlinks{display:none!important}.fh-2col{grid-template-columns:1fr!important}}
 @media (max-width:760px){[data-sphere-text]{left:50%!important;top:auto!important;bottom:14%!important;transform:translateX(-50%)!important;text-align:center;max-width:88%!important}}
 @media (max-width:760px){[data-sphere-scene]{align-items:flex-start!important;padding-top:24vh!important}}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}[data-nav]{transition:none!important}svg[style*="fh-bounce"]{animation:none!important}}
+@keyframes fh-bounce{0%,100%{transform:translateY(0);opacity:.4}50%{transform:translateY(6px);opacity:.9}}
 </style>
 </helmet>
 
-<nav style="position:fixed;top:0;left:0;right:0;z-index:50;display:flex;justify-content:center;padding:18px 16px 0;pointer-events:none">
+<nav data-nav style="position:fixed;top:0;left:0;right:0;z-index:50;display:flex;justify-content:center;padding:18px 16px 0;pointer-events:none;transition:opacity .3s ease,transform .3s ease">
   <div style="pointer-events:auto;display:flex;align-items:center;gap:28px;background:rgba(255,255,255,.7);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-radius:12px;padding:12px 22px;box-shadow:0 1px 4px rgba(28,61,90,.08);border:1px solid rgba(28,61,90,.06)">
     <a href="#inicio" style="display:flex;align-items:center;gap:9px">
       <span style="font-family:'Instrument Serif',serif;font-size:21px;letter-spacing:.01em;color:#1C3D5A">Finhabit</span>
@@ -214,8 +215,10 @@ a:hover{color:#B08D57}
 </section>
 
 <section id="porque" data-reveal style="background:#132A40">
-  <div style="max-width:1100px;margin:0 auto;padding:80px 20px 0">
-    <h2 style="margin:0;font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(1.9rem,3.6vw,3rem);color:#FEFEFE;text-align:center">¿Por qué <em>Finhabit</em>?</h2>
+  <div style="max-width:1100px;margin:0 auto;padding:80px 20px 0;text-align:center">
+    <h2 style="margin:0;font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(1.9rem,3.6vw,3rem);color:#FEFEFE">¿Por qué <em>Finhabit</em>?</h2>
+    <p style="margin:10px 0 0;font-size:13.5px;color:rgba(254,254,254,.5)">Sigue bajando para descubrirlo</p>
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(254,254,254,.4)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="margin-top:14px;animation:fh-bounce 1.8s ease-in-out infinite"><path d="M6 9l6 6 6-6"/></svg>
   </div>
   <div data-sphere-scroll style="position:relative;height:300vh">
     <div data-sphere-scene style="position:sticky;top:0;height:100vh;height:100svh;width:100%;display:flex;justify-content:center;align-items:center;perspective:1200px;overflow:hidden">
@@ -324,6 +327,7 @@ class Component extends DCLogic {
     this._keepPlaying = keepPlaying;
     this.initStack();
     this.initSphere();
+    this.initNavHide();
     const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (!reduced) {
       this.setState({ counts: this.statsDef.map(() => 0) });
@@ -358,6 +362,21 @@ class Component extends DCLogic {
     if (this._keepPlaying) document.removeEventListener('visibilitychange', this._keepPlaying);
     if (this._stackCleanup) this._stackCleanup();
     if (this._sphereCleanup) this._sphereCleanup();
+    if (this._navIo) this._navIo.disconnect();
+  }
+  initNavHide() {
+    const navEl = document.querySelector('[data-nav]');
+    const navInner = navEl && navEl.querySelector('div');
+    const porqueEl = document.getElementById('porque');
+    if (!navEl || !navInner || !porqueEl) return;
+    this._navIo = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        navEl.style.opacity = e.isIntersecting ? '0' : '1';
+        navEl.style.transform = e.isIntersecting ? 'translateY(-16px)' : 'none';
+        navInner.style.pointerEvents = e.isIntersecting ? 'none' : 'auto';
+      });
+    }, { threshold: 0 });
+    this._navIo.observe(porqueEl);
   }
   initStack() {
     const stage = document.querySelector('[data-stack-stage]');
